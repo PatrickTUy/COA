@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/d-din');
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+#images {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.imageContainer {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+.image-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+}
+
+.test {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  /* background: linear-gradient(to right, #ff7e5f, #feb47b); */
+}
+
+.image-info {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  z-index: 1;
+  cursor: default;
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.know-more {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  color: #6f82c7;
+  font-family: 'Poppins', sans-serif;
+}
+
+.know-more-visible {
+  opacity: 1;
+  pointer-events: auto;
+  margin-top: 12px;
+}
+
+.image-hovered {
+  filter: blur(3px);
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Transparent overlay for hover effect */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+  /* backdrop-filter: blur(5px); */
+}
+
+.image-overlay-visible {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0); /* Transparent overlay for hover effect */
+  opacity: 0;
+  transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+}
+
+.din-condensed {
+  font-family: 'D-DIN Condensed', sans-serif;
+  font-size: 2.375rem;
+  line-height: 2.375rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  word-wrap: break-word; /* Ensures long words break and wrap to the next line */
+  word-break: break-word; /* Ensures words break at the end of the line */
+  overflow-wrap: break-word; /* Ensures content wraps to avoid overflow */
+  white-space: normal;
+}
+
+.poppins {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* responsiveness */
+
+@media (max-width: 1440px) {
+  .din-condensed {
+    line-height: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-info {
+    display: none;
+  }
+}
