@@ -1,22 +1,30 @@
 const stringTransform = (string) => {
   if (string.length % 3 === 0 && string.length % 5 === 0) {
-    let reversedAsciiCode = ''; //  this string will store the reversed ascii code
-    for (let i = string.length; i >= 0; i--) {
-      reversedAsciiCode += string.charCodeAt(i) + ' ';
+    let reversedAsciiCode = ''; // Initialize a string to help in reversing the string and store the reversed ascii code
+    for (let i = string.length - 1; i >= 0; i--) {
+      reversedAsciiCode += string.charCodeAt(i);
+      if (i > 0) {
+        reversedAsciiCode += ' ';
+      }
     }
-
     return reversedAsciiCode;
   } else if (string.length % 3 === 0) {
-    let reversed = '';
-    for (let i = string.length; i >= 0; i--) {
+    let reversed = ''; // Initialize a string to store the reversed string
+    for (let i = string.length - 1; i >= 0; i--) {
       reversed += string[i];
     }
     return reversed;
   } else if (string.length % 5 === 0) {
-    let asciiCode = '';
-    for (let i = 0; i <= string.length; i++) {
-      asciiCode += string.charCodeAt(i) + ' ';
+    let asciiCode = ''; // Initialize a string store the ASCII code
+    for (let i = 0; i < string.length; i++) {
+      asciiCode += string.charCodeAt(i);
+      if (i < string.length - 1) {
+        asciiCode += ' '; //check to avoid appending an extra space at the end of the ASCII code strings.
+      }
     }
     return asciiCode;
   }
+  return false; // return false if none of the conditions match
 };
+
+console.log(stringTransform('Hello World1234'));
